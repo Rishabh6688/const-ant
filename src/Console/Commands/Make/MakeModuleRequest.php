@@ -28,7 +28,7 @@ class MakeModuleRequest extends Command
 
         File::ensureDirectoryExists($path);
 
-      $stubPath = base_path('Modules/Core/src/Console/Commands/stubs/module-request.stub');
+         $stubPath = __DIR__ . '/../stubs/module-request.stub';
 
         if (!File::exists($stubPath)) {
             $this->error("Stub file not found at: {$stubPath}");

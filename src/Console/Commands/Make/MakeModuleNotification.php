@@ -36,7 +36,7 @@ class MakeModuleNotification extends Command
         File::ensureDirectoryExists($notificationsPath);
 
         // Load stub from Core module
-        $stubPath = __DIR__ . '/stubs/module-notification.stub';
+         $stubPath = __DIR__ . '/../stubs/module-notification.stub';
 
         if (!File::exists($stubPath)) {
             $this->error("Stub file not found at: {$stubPath}");

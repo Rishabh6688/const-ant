@@ -33,7 +33,7 @@ class ModuleEventProviderCommand extends Command
 
         // Generate provider file
         $providerFile = "{$providerPath}/{$eventName}.php";
-        $stub = File::get(base_path('Modules/Core/src/Console/Commands/stubs/EventServiceProvider.stub'));
+        $stub = File::get(base_path( __DIR__ . '/../stubs/EventServiceProvider.stub'));
 
 
         // Replace placeholders

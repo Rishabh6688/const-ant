@@ -29,7 +29,7 @@ class MakeModuleObserver extends Command
             return;
         }
 
-      $stubPath = base_path('Modules/Core/src/Console/Commands/stubs/observer.stub');
+         $stubPath = __DIR__ . '/../stubs/observer.stub';
         if (!File::exists($stubPath)) {
             $this->error("Stub file not found at: {$stubPath}");
             return;

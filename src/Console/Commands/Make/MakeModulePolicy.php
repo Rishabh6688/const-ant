@@ -29,7 +29,7 @@ class MakeModulePolicy extends Command
             return;
         }
 
-      $stubPath = base_path('Modules/Core/src/Console/Commands/stubs/policy.stub');
+         $stubPath = __DIR__ . '/../stubs/policy.stub';
         if (!File::exists($stubPath)) {
             $this->error("Stub file not found at: {$stubPath}");
             return;

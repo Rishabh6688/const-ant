@@ -29,7 +29,9 @@ class MakeAction extends Command
         $module = $this->getModuleName();
         $className = Str::studly($this->argument('action'));
 
-        $stubPath = base_path('Modules/Core/src/Console/Commands/stubs/action.stub');
+    
+        $stubPath = __DIR__ . '/../stubs/action.stub';
+
 
         if (!file_exists($stubPath)) {
             $this->error("Stub file not found: {$stubPath}");

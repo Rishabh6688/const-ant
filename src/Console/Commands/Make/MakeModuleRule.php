@@ -29,7 +29,7 @@ class MakeModuleRule extends Command
             return;
         }
 
-        $stubPath = base_path('Modules/Core/src/Console/Commands/stubs/rule.stub');
+         $stubPath = __DIR__ . '/../stubs/rule.stub';
         if (!File::exists($stubPath)) {
             $this->error("Stub file not found at: {$stubPath}");
             return;

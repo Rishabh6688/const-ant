@@ -22,7 +22,7 @@ class ModuleMakeExceptionCommand extends Command
         $namespace = "Modules\\{$module}\\Exceptions";
         $filePath = "{$basePath}/{$name}.php";
 
-        $stubPath = base_path("Modules/Core/src/console/commands/stubs/exception.stub");
+        $stubPath = base_path(__DIR__ . '/../stubs/exception.stub');
 
         if (!File::exists($stubPath)) {
             $this->error("Missing stub: {$stubPath}");

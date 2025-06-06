@@ -29,7 +29,8 @@ class MakeInterfaceCommand extends Command
         $module = $this->getModuleName();
         $className = Str::studly($this->argument('interface'));
 
-        $stubPath = base_path('Modules/Core/src/Console/Commands/stubs/interface.stub');
+
+        $stubPath = __DIR__ . '/../stubs/interface.stub';
 
         if (!file_exists($stubPath)) {
             $this->error("Stub file not found: {$stubPath}");

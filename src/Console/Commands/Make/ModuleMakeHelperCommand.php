@@ -19,7 +19,7 @@ class ModuleMakeHelperCommand extends Command
         $basePath = base_path("Modules/{$module}/src/Helpers");
         $namespace = "Modules\\{$module}\\Helpers";
 
-       $stubPath = base_path("Modules/Core/src/console/commands/stubs/helper.stub");
+       $stubPath = File::get(__DIR__ . '/../stubs/helper.stub');
 
 
         if (!File::exists($stubPath)) {

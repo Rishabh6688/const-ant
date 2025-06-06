@@ -61,6 +61,6 @@ class MakeMailCommand extends Command
     protected function getStub()
     {
         // Adjust path according to where you store your stubs
-        return $this->files->get(__DIR__ . '/stubs/mail.stub');
+        return $this->files->get(__DIR__ . '/../stubs/mail.stub');
     }
 }

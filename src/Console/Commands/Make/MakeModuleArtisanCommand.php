@@ -29,7 +29,8 @@ class MakeModuleArtisanCommand extends Command
             return;
         }
 
-        $stubPath = __DIR__ . '/stubs/console-command.stub';
+                 $stubPath = __DIR__ . '/../stubs/console-command.stub';
+
         if (!File::exists($stubPath)) {
             $this->error("Stub file not found at: {$stubPath}");
             return;

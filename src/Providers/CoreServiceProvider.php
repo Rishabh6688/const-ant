@@ -192,6 +192,7 @@ class CoreServiceProvider extends ServiceProvider
         $this->registerTranslations();
         $this->registerMigrations();
         $this->bootModules();
+        $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
     }
 
     /**

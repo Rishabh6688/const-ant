@@ -44,7 +44,8 @@ class ModuleRepositoryMakeCommand extends Command
         $repositoryFile = "{$repositoryPath}/{$name}.php";
 
         // Load the stub template
-        $stubPath = base_path('Modules/Core/src/Console/Commands/stubs/repository.stub');
+        $stubPath = File::get(__DIR__ . '/../stubs/repository.stub');
+
         if (!File::exists($stubPath)) {
             $this->error("Stub file not found at {$stubPath}");
             return 1;

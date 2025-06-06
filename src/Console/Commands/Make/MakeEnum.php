@@ -40,7 +40,7 @@ class MakeEnum extends Command
 
     protected function getTemplateContents(): string
     {
-        $stubPath = base_path('Modules/Core/src/Console/Commands/stubs/enum.stub');
+        $stubPath = __DIR__ . '/../stubs/enum.stub';
 
         if (!File::exists($stubPath)) {
             $this->error("Stub file not found at: {$stubPath}");

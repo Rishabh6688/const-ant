@@ -28,7 +28,8 @@ class ModuleMakeScopeCommand extends Command
 
     protected function getStub(): string
     {
-        return base_path('Modules/Core/src/Console/Commands/stubs/scope.stub');
+        return File::get(__DIR__ . '/../stubs/scope.stub');
+
     }
 
     protected function getDefaultNamespace(string $module): string

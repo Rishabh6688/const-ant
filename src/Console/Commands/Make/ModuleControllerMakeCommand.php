@@ -75,8 +75,9 @@ class ModuleControllerMakeCommand extends Command
      */
     protected function createBaseController($module)
     {
-        // 
-        $stub = File::get(__DIR__ . '/stubs/base-controller.stub');
+        //          $stubPath = __DIR__ . '/../stubs/job.stub';
+
+        $stub = File::get( __DIR__ . '/../stubs/base-controller.stub');
         $stub = str_replace('{{ module_name }}', $module, $stub);
 
         $controllerPath = base_path("modules/{$module}/src/Http/Controllers");

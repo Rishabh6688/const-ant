@@ -31,7 +31,8 @@ class MakeChannel extends Command
     $className = Str::studly($this->argument('channel'));
 
     // Updated path
-    $stubPath = base_path('Modules/Core/src/Console/Commands/stubs/channel.stub');
+    $stubPath = __DIR__ . '/../stubs/channel.stub';
+    // $stubPath = base_path('Modules/Core/src/Console/Commands/stubs/channel.stub');
 
     if (!file_exists($stubPath)) {
         $this->error("Stub file not found: {$stubPath}");

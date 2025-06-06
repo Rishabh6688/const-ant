@@ -46,7 +46,7 @@ class ModuleMakeViewCommand extends Command
         $view = $this->argument('name');
         $module = Str::studly($this->argument('module'));
 
-        $stubPath = base_path('Modules/Core/src/Console/Commands/stubs/view.stub');
+        $stubPath = File::get(__DIR__ . '/../stubs/view.stub');
 
         return str_replace(
             ['{{ view_name }}', '{{ module_name }}'],

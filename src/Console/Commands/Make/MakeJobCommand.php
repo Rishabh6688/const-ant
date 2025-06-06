@@ -30,8 +30,7 @@ class MakeJobCommand extends Command
             mkdir(dirname($path), 0755, true);
         }
 
-        $stubPath = __DIR__ . '/stubs/job.stub';
-
+         $stubPath = __DIR__ . '/../stubs/job.stub';
         if (!file_exists($stubPath)) {
             $this->error("Stub file not found at {$stubPath}");
             return;

@@ -22,7 +22,8 @@ class ModuleMakeListener extends Command
         $namespace = "Modules\\{$module}\\Listeners";
         $eventClass = "Modules\\{$module}\\Events\\{$event}";
 
-        $stub = File::get(base_path("Modules/Core/src/console/commands/stubs/listener.stub"));
+
+        $stub = File::get(__DIR__ . '/../stubs/listener.stub');
         $stub = str_replace(
             ['{{ namespace }}', '{{ class }}', '{{ event }}'],
             [$namespace, $name, $eventClass],

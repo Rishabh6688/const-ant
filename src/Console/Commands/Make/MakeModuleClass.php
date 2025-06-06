@@ -35,7 +35,8 @@ class MakeModuleClass extends Command
         }
 
         // ✅ Use stub located inside the same directory as this command
-        $stubPath = base_path('Modules/Core/src/Console/Commands/stubs/class.stub');
+         $stubPath = __DIR__ . '/../stubs/class.stub';
+
         if (!File::exists($stubPath)) {
             $this->error("Stub file not found at: {$stubPath}");
             return;

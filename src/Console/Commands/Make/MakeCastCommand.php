@@ -42,7 +42,8 @@ class MakeCastCommand extends Command
         }
 
         // Stub path from Core module
-        $stubPath = base_path("Modules/Core/src/Console/Commands/stubs/cast.stub");
+      
+        $stubPath = __DIR__ . '/../stubs/cast.stub';
 
         if (! $this->files->exists($stubPath)) {
             $this->error("Stub file not found at {$stubPath}");

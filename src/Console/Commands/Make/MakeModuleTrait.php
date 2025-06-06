@@ -29,7 +29,7 @@ class MakeModuleTrait extends Command
             return;
         }
 
-        $stubPath = __DIR__ . '/stubs/trait.stub';
+         $stubPath = __DIR__ . '/../stubs/trait.stub';
         if (!File::exists($stubPath)) {
             $this->error("Stub file not found at: {$stubPath}");
             return;

@@ -29,7 +29,7 @@ class MakeModuleComponent extends Command
             return;
         }
 
-      $stubPath = base_path('Modules/Core/src/Console/Commands/stubs/component.stub');
+         $stubPath = __DIR__ . '/../stubs/component.stub';
         if (!File::exists($stubPath)) {
             $this->error("Stub file not found at: {$stubPath}");
             return;

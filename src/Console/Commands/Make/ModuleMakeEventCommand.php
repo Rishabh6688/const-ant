@@ -19,7 +19,7 @@ class ModuleMakeEventCommand extends Command
         $basePath = base_path("Modules/{$module}/src/Events");
         $namespace = "Modules\\{$module}\\Events";
 
-        $stub = File::get(base_path('Modules/Core/src/Console/Commands/stubs/event.stub'));
+        $stub = File::get(__DIR__ . '/../stubs/event.stub');
         $stub = str_replace(
             ['{{ namespace }}', '{{ class }}'],
             [$namespace, $name],
