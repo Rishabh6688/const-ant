@@ -17,7 +17,7 @@ class ModuleMigrationMakeCommand extends Command
 
     protected function getStubPath()
     {
-        return base_path('modules/Core/src/Console/Commands/stubs/migrations');
+         return __DIR__ . '/../../stubs/migrations';
     }
 
     protected function getStub()

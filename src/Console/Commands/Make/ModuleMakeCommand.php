@@ -244,7 +244,8 @@ class ModuleMakeCommand extends Command
      */
     protected function registerModuleInCoreConfig()
     {
-        $configFile = base_path('modules/Core/src/Config/config.php');
+        $configFile = base_path('vendor/const-ant/laravel-corex/src/Config/config.php');
+
         $config = require $configFile;
 
         if (!isset($config['modules'])) {

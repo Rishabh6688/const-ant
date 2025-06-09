@@ -46,11 +46,11 @@ class ModuleServiceMakeCommand extends Command
 
         // Generate service file
         $serviceFile = "{$servicePath}/{$serviceName}.php";
-        $stub = File::get(__DIR__ . '/stubs/service.stub');
+        $stub = File::get(__DIR__ . '/../stubs/service.stub');
 
         // Replace placeholders
         $content = str_replace(
-            ['{{ module_name }}', '{{ model_name }}'],
+            ['{{ module_name }}', '{{ class_name }}'],
             [$module, $serviceName],
             $stub
         );

@@ -70,5 +70,7 @@ return array (
     1 => 'Agency',
     2 => 'Socialmanagement',
     3 => 'CollageStudent',
+    4 => 'Test',
+    5 => 'Student',
   ),
 );

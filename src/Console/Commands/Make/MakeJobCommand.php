@@ -4,17 +4,16 @@ namespace Modules\Core\Console\Commands\Make;
 
 use Illuminate\Console\Command;
 use Illuminate\Support\Str;
-use Symfony\Component\Console\Input\InputArgument;
 
 class MakeJobCommand extends Command
 {
     protected $signature = 'module:make-job {name : The name of the Job class} {module : The name of the module}';
-    protected $description = 'Create a new Job class inside src/User/Jobs folder of the module';
+    protected $description = 'Create a new Job class inside src/Users/Jobs folder of the module';
 
     public function handle()
     {
         $name = $this->argument('name');
-        $module = $this->argument('module');
+        $module = Str::studly($this->argument('module')); // Ensures proper casing
 
         $className = class_basename($name);
         $namespace = "Modules\\$module\\src\\User\\Jobs";
@@ -30,14 +29,18 @@ class MakeJobCommand extends Command
             mkdir(dirname($path), 0755, true);
         }
 
-         $stubPath = __DIR__ . '/../stubs/job.stub';
+        $stubPath = __DIR__ . '/../stubs/job.stub';
         if (!file_exists($stubPath)) {
             $this->error("Stub file not found at {$stubPath}");
             return;
         }
 
         $stub = file_get_contents($stubPath);
-        $stub = str_replace(['DummyNamespace', 'DummyClass'], [$namespace, $className], $stub);
+        $stub = str_replace(
+            ['DummyNamespace', 'DummyClass'],
+            [$namespace, $className],
+            $stub
+        );
 
         file_put_contents($path, $stub);
 

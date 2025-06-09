@@ -56,7 +56,7 @@ class MakeModuleFactory extends Command
 
  protected function getStub(): string
 {
-    $stubPath = realpath(base_path('modules/Core/src/Console/Commands/stubs/factory.stub'));
+    $stubPath = realpath(base_path('vendor/const-ant/laravel-corex/src/Console/Commands/stubs/factory.stub'));
 
     if (!$stubPath || !file_exists($stubPath)) {
         throw new \RuntimeException("Stub file not found at: {$stubPath}");
