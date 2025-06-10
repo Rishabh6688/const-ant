@@ -278,9 +278,10 @@ class CoreServiceProvider extends ServiceProvider
     {
         $migrationsPath = base_path(__DIR__.'/../database/migrations');
 
-        if (File::exists($migrationsPath)) {
-            $this->loadMigrationsFrom($migrationsPath);
-        }
+        $this->publishes([
+            __DIR__ . '/../Database/Migrations' => database_path('migrations/'),
+        ], 'corex-module-migrations');
+
         if (File::exists($migrationsPath)) {
             $this->loadMigrationsFrom($migrationsPath);
         }
