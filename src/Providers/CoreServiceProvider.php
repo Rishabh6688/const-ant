@@ -277,7 +277,10 @@ class CoreServiceProvider extends ServiceProvider
     protected function registerMigrations(): void
     {
         $migrationsPath = base_path(__DIR__.'/../database/migrations');
-        
+
+        if (File::exists($migrationsPath)) {
+            $this->loadMigrationsFrom($migrationsPath);
+        }
         if (File::exists($migrationsPath)) {
             $this->loadMigrationsFrom($migrationsPath);
         }
