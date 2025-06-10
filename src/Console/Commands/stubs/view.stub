@@ -9,3 +9,4 @@
         <p>for the <strong>{{ module_name }}</strong> module.</p>
     </div>
 @endsection
+

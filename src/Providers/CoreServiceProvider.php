@@ -192,7 +192,6 @@ class CoreServiceProvider extends ServiceProvider
         $this->registerTranslations();
         $this->registerMigrations();
         $this->bootModules();
-        $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
     }
 
     /**
@@ -277,7 +276,7 @@ class CoreServiceProvider extends ServiceProvider
      */
     protected function registerMigrations(): void
     {
-        $migrationsPath = base_path('modules/Core/src/Database/Migrations');
+        $migrationsPath = base_path(__DIR__.'/../database/migrations');
         
         if (File::exists($migrationsPath)) {
             $this->loadMigrationsFrom($migrationsPath);

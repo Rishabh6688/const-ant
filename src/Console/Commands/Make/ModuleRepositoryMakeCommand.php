@@ -23,49 +23,44 @@ class ModuleRepositoryMakeCommand extends Command
     /**jdkzfefas
      * Execute the console command.
      */
-    public function handle()
-    {
-        $name = $this->argument('name');
-        $module = $this->argument('module');
+   public function handle()
+{
+    $name = $this->argument('name');
+    $module = $this->argument('module');
 
-        // Ensure module exists
-        if (!File::exists(base_path("modules/{$module}"))) {
-            $this->error("Module [{$module}] does not exist.");
-            return 1;
-        }
-
-        // Create Repositories directory if it doesn't exist
-        $repositoryPath = base_path("modules/{$module}/src/Repositories");
-        if (!File::exists($repositoryPath)) {
-            File::makeDirectory($repositoryPath, 0755, true);
-        }
-
-        // Path to the new repository file
-        $repositoryFile = "{$repositoryPath}/{$name}.php";
-
-        // Load the stub template
-        $stubPath = File::get(__DIR__ . '/../stubs/repository.stub');
-
-        if (!File::exists($stubPath)) {
-            $this->error("Stub file not found at {$stubPath}");
-            return 1;
-        }
-
-        $stub = File::get($stubPath);
-
-        // Replace placeholders
-        $content = str_replace(
-            ['{{ module_name }}', '{{ class_name }}'],
-            [$module, str_replace('.php', '', $name)],
-            $stub
-        );
-
-        // Write the file
-        File::put($repositoryFile, $content);
-
-        $this->info("Repository [{$name}] created successfully.");
-        $this->info("Path: {$repositoryFile}");
-
-        return 0;
+    if (!File::exists(base_path("modules/{$module}"))) {
+        $this->error("Module [{$module}] does not exist.");
+        return 1;
     }
+
+    $repositoryPath = base_path("modules/{$module}/src/Repositories");
+    if (!File::exists($repositoryPath)) {
+        File::makeDirectory($repositoryPath, 0755, true);
+    }
+
+    $repositoryFile = "{$repositoryPath}/{$name}.php";
+
+    $stubPath = __DIR__ . '/../stubs/repository.stub';
+
+    if (!File::exists($stubPath)) {
+        $this->error("Stub file not found at {$stubPath}");
+        return 1;
+    }
+
+    $stub = File::get($stubPath);
+
+    $content = str_replace(
+        ['{{ module_name }}', '{{ class_name }}'],
+        [$module, str_replace('.php', '', $name)],
+        $stub
+    );
+
+    File::put($repositoryFile, $content);
+
+    $this->info("Repository [{$name}] created successfully.");
+    $this->info("Path: {$repositoryFile}");
+
+    return 0;
+}
+
 }

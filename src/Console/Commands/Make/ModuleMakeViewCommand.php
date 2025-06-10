@@ -5,8 +5,6 @@ namespace Modules\Core\Console\Commands\Make;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Str;
-// use Modules\Core\src\Console\Commands\Generators\GeneratorCommand;
-use Modules\Core\Console\Commands\GeneratorCommand;
 
 class ModuleMakeViewCommand extends Command
 {
@@ -46,12 +44,19 @@ class ModuleMakeViewCommand extends Command
         $view = $this->argument('name');
         $module = Str::studly($this->argument('module'));
 
-        $stubPath = File::get(__DIR__ . '/../stubs/view.stub');
+        $stubPath = __DIR__ . '/../stubs/view.stub';
+
+        if (!File::exists($stubPath)) {
+            $this->error("Stub file not found: {$stubPath}");
+            exit(Command::FAILURE);
+        }
+
+        $stub = File::get($stubPath);
 
         return str_replace(
             ['{{ view_name }}', '{{ module_name }}'],
             [$view, $module],
-            File::get($stubPath)
+            $stub
         );
     }
 
