@@ -1,4 +1,4 @@
-🧩 Laravel-Corex-Modules
+## 🧩 Laravel-Corex-Modules
 
 
 [![Latest Version on Packagist]]
@@ -67,7 +67,7 @@ The application uses a centralized module management system where:
    ```
 
 
-🛠️ Installation
+## 🛠️ Installation
 
 To install via Composer, run:
 
@@ -86,7 +86,7 @@ Optionally, publish the package's configuration file by running:
 
 
 
-⚙️ Module Lifecycle Commands
+## ⚙️ Module Lifecycle Commands
 
 1.  🚀 Installing a New Module**
    ```bash
@@ -126,44 +126,46 @@ Optionally, publish the package's configuration file by running:
 
 
 
-🧱 Module Structure
+## 🧱 Module Structure
 
 Each module lives in its own subfolder, and follows a clean, organized directory structure. Below is an example of a generated module (e.g., Blog) inside your package:
 
+```text
 Blog Module/
 └── src/
-    ├── Http/
-    │   └── Controllers/
-    │       └── BlogController.php
-    ├── Models/
-    │   └── Blog.php
-    ├── Providers/
-    │   ├── BlogServiceProvider.php
-    │   └── RouteServiceProvider.php
-    ├── config/
-    │   └── config.php
-    ├── database/
-    │   ├── factories/
-    │   ├── migrations/
-    │   └── seeders/
-    │       └── BlogDatabaseSeeder.php
-    ├── resources/
-    │   ├── assets/
-    │   │   ├── js/
-    │   │   └── sass/
-    │   └── views/
-    │       ├── layouts/
-    │       └── index.blade.php
-    ├── routes/
-    │   ├── web.php
-    │   └── api.php
-    ├── composer.json
-    ├── module.json
-    ├── package.json
-    └── vite.config.js
+├── Http/
+│ └── Controllers/
+│ └── BlogController.php
+├── Models/
+│ └── Blog.php
+├── Providers/
+│ ├── BlogServiceProvider.php
+│ └── RouteServiceProvider.php
+├── config/
+│ └── config.php
+├── database/
+│ ├── factories/
+│ ├── migrations/
+│ └── seeders/
+│ └── BlogDatabaseSeeder.php
+├── resources/
+│ ├── assets/
+│ │ ├── js/
+│ │ └── sass/
+│ └── views/
+│ ├── layouts/
+│ └── index.blade.php
+├── routes/
+│ ├── web.php
+│ └── api.php
+├── composer.json
+├── module.json
+├── package.json
+└── vite.config.js
+```
 
 
-🤝 Contributing
+## 🤝 Contributing
 
 When contributing to the module system:
 1. Ensure all new modules follow the established structure
@@ -172,17 +174,17 @@ When contributing to the module system:
 4. Test module installation and removal processes 
 
 
-📚 Documentation
+## 📚 Documentation
 
 You'll find installation instructions and full documentation on [https://laravelmodules.com/](https://laravelmodules.com/docs).
 
-🎬 Demo
+## 🎬 Demo
 
 You can see a demo using Laravel Breeze at (github).
 
 This is a complete application using Auth, Base and Profile modules.
 
-🌐 Community
+## 🌐 Community
 
 We also have a Discord community. [https://discord.gg/hkF7BRvRZK](https://discord.gg/hkF7BRvRZK) For quick help, ask questions in the appropriate channel.
 
@@ -190,6 +192,6 @@ We also have a Discord community. [https://discord.gg/hkF7BRvRZK](https://discor
 
 - [All Contributors](../../contributors)
 
-🛡️ License
+## 🛡️ License
 
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
