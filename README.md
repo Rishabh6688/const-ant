@@ -193,16 +193,3 @@ We also have a Discord community. [https://discord.gg/hkF7BRvRZK](https://discor
 🛡️ License
 
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
-
-
-
-
-
-
-
-
-
-
-
-
-
